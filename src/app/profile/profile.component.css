@@ -1,0 +1,32 @@
+.profile {
+  background: -webkit-linear-gradient(#DF6363, #FFB88C);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "MADE TOMMY";
+}
+
+.profile-1 {
+  font-family: "MADE TOMMY";
+  color: white;
+}
+
+.profile-2 {
+  font-family: "MADE TOMMY";
+  color: darkred;
+}
+
+.profile-3 {
+  font-family: "MADE TOMMY";
+  color: steelblue;
+}
+
+.bg-custom {
+  background-image: linear-gradient(to right, #DF6363 0%, #FFB88C 100%);
+  border: none;
+}
+
+.bg-custom-2 {
+  background-image: linear-gradient(to right, #E0C4FD 0%, #8FC6FD 100%);
+  border: none;
+}
+
