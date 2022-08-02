@@ -1,0 +1,77 @@
+<div class="container mt-5">
+  <h3 class="validation">My Validation</h3>
+  <hr class="border-dark">
+  <form [formGroup]="formDataDiri" class="card p-4 mb-3">
+    <h3 class="text-center validation">Formulir Data Diri</h3>
+    <div class="mb-3">
+      <label class="form-label">Nama Lengkap</label>
+      <input [class.is-invalid]="formDataDiri.controls['nama'].invalid && formDataDiri.controls['nama'].touched"
+             class="form-control" formControlName="nama"
+             placeholder="Masukan nama lengkap anda"
+             type="text">
+      <div *ngIf="formDataDiri.controls['nama'].hasError('required')"
+           class="invalid-feedback">Nama harus diisi</div>
+      <div *ngIf="formDataDiri.controls['nama'].hasError('minlength')"
+           class="invalid-feedback">Nama harus minimal 10 kata</div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Umur</label>
+      <input [class.is-invalid]="formDataDiri.controls['umur'].invalid && formDataDiri.controls['umur'].touched"
+             class="form-control"
+             formControlName="umur"
+             placeholder="Masukan umur anda" type="number">
+      <div *ngIf="formDataDiri.controls['umur'].hasError('required')"
+           class="invalid-feedback">Umur harus diisi
+      </div>
+      <div *ngIf="formDataDiri.controls['umur'].hasError('min')"
+           class="invalid-feedback">Umur harus minimal 17 tahun
+      </div>
+      <div *ngIf="formDataDiri.controls['umur'].hasError('max')"
+           class="invalid-feedback">Umur harus maksimal 65 tahun
+      </div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Nomer Telpon</label>
+      <input [class.is-invalid]="formDataDiri.controls['noTelp'].invalid && formDataDiri.controls['noTelp'].touched"
+             class="form-control"
+             formControlName="noTelp"
+             placeholder="Masukan nomer telpon anda"
+             type="tel">
+      <div *ngIf="formDataDiri.controls['noTelp'].hasError('required')"
+           class="invalid-feedback">Nomor telpon harus diisi
+      </div>
+      <div *ngIf="formDataDiri.controls['noTelp'].hasError('minlength')"
+           class="invalid-feedback">Nomor telpon harus minimal 12 kata
+      </div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Email</label>
+      <input [class.is-invalid]="formDataDiri.controls['email'].invalid && formDataDiri.controls['email'].touched"
+             class="form-control"
+             formControlName="email"
+             placeholder="Masukan email anda"
+             type="email">
+      <div *ngIf="formDataDiri.controls['email'].hasError('required')"
+           class="invalid-feedback">Email harus diisi</div>
+      <div *ngIf="formDataDiri.controls['email'].hasError('email')"
+           class="invalid-feedback">Email yang dimasukkan harus benar</div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Alamat</label>
+      <textarea [class.is-invalid]="formDataDiri.controls['alamat'].invalid && formDataDiri.controls['alamat'].touched"
+                class="form-control"
+                formControlName="alamat"
+                rows="4"
+                type="text">
+      </textarea>
+      <div *ngIf="formDataDiri.controls['alamat'].hasError('required')"
+           class="invalid-feedback">Alamat harus diisi</div>
+      <div *ngIf="formDataDiri.controls['alamat'].hasError('minlength')"
+           class="invalid-feedback">Alamt harus minimal 12 kata</div>
+    </div>
+    <button
+      [disabled]="formDataDiri.invalid"
+      class="btn btn-success">Tampilkan
+    </button>
+  </form>
+</div>
