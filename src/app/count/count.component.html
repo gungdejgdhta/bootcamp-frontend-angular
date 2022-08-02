@@ -1,0 +1,37 @@
+<div class="container mt-5">
+  <h3 class="count">My Calculator</h3>
+  <hr class="border-primary">
+  <form
+    [formGroup]="formCount"
+    class="row mt-4 mb-4">
+    <div class="col">
+      <label class="form-label">Minimal Pengurangan</label>
+      <input
+        formControlName = "minimal"
+        class="form-control" type="number" placeholder="Pengurangan">
+    </div>
+    <div class="col">
+      <label class="form-label">Maksimal Penjumlahan</label>
+      <input
+        formControlName = "maksimal"
+        class="form-control" type="number" placeholder="Penjumlahan">
+    </div>
+  </form>
+
+  <div class="card rounded text-center">
+    <h1 class="text-light m-3 rounded bg-custom"
+        style="font-size: 200px">{{count}}</h1>
+    <div class="ml-3 mb-3">
+      <button
+        (click)="countPengurangan(formCount.controls['minimal'].value)"
+        class="btn btn-lg btn-outline-danger m-2"
+        style="width: 48%; font-size: 50px">-
+      </button>
+      <button
+        (click)="countPenjumlahan(formCount.controls['maksimal'].value)"
+        class="btn btn-lg btn-outline-success m-2"
+        style="width: 48%; font-size: 50px">+
+      </button>
+    </div>
+  </div>
+</div>
