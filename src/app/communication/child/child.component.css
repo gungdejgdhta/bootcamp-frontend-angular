@@ -1,12 +1,11 @@
-.validation {
+.child {
   background: -webkit-linear-gradient(#9896F0, #FBC8D5);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: "MADE TOMMY";
 }
 
-.btn {
+.table-custom {
   background-image: linear-gradient(to right, #9896F0 0%, #FBC8D5 100%);
-  font-family: "MADE TOMMY";
   color: white;
 }

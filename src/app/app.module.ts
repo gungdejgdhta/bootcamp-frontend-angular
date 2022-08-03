@@ -9,6 +9,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { CountComponent } from './count/count.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import { ValidationComponent } from './validation/validation.component';
+import { ParentComponent } from './communication/parent/parent.component';
+import { ChildComponent } from './communication/child/child.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { ValidationComponent } from './validation/validation.component';
     NavbarComponent,
     ProfileComponent,
     CountComponent,
-    ValidationComponent
+    ValidationComponent,
+    ParentComponent,
+    ChildComponent
   ],
     imports: [
         BrowserModule,

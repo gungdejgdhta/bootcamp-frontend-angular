@@ -3,6 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {ProfileComponent} from "./profile/profile.component";
 import {CountComponent} from "./count/count.component";
 import {ValidationComponent} from "./validation/validation.component";
+import {ParentComponent} from "./communication/parent/parent.component";
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'validation',
     component: ValidationComponent
+  },
+  {
+    path: 'communication',
+    component: ParentComponent
   }
 ];
 
