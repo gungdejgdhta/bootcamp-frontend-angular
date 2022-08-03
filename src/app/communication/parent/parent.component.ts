@@ -9,7 +9,7 @@ import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 })
 export class ParentComponent implements OnInit {
 
-  message!: MessageModel;
+  messageToChild!: MessageModel;
   formMessage!: FormGroup;
 
   constructor(private formBuild: FormBuilder) {
@@ -23,7 +23,20 @@ export class ParentComponent implements OnInit {
   }
 
   sendMessage() {
-    console.log(this.formMessage.value)
+    const message: MessageModel = new MessageModel();
+    message.name = this.formMessage.controls['name'].value;
+    message.message = this.formMessage.controls['message'].value;
+    this.messageToChild = message;
+    console.log(this.messageToChild);
+
+    this.formMessage.reset();
+    this.formMessage.untouched;
+  }
+
+  acceptMessage($event: MessageModel) : void {
+    console.log($event);
+    this.formMessage.controls['name'].setValue($event.name);
+    this.formMessage.controls['message'].setValue($event.message);
   }
 
 }

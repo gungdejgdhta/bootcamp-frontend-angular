@@ -2,17 +2,23 @@
   <h3 class="text-center child">List Message</h3>
   <table class="table table-bordered mt-4">
     <thead class="table-custom">
-    <tr>
-      <th scope="col">#</th>
+    <tr class="text-center">
+      <th scope="col">No</th>
       <th scope="col">Name</th>
       <th scope="col">Message</th>
+      <th scope="col">Action</th>
     </tr>
     </thead>
     <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
+    <tr
+      class="text-center"
+      *ngFor="let message of listMessage; let i = index">
+      <th class="body-custom" scope="row">{{i + 1}}</th>
+      <td class="body-custom">{{message.name}}</td>
+      <td class="body-custom">{{message.message}}</td>
+      <td><button
+        (click)="sendMessage(i)"
+        class="btn btn-success btn-sm">Send</button></td>
     </tr>
     </tbody>
   </table>

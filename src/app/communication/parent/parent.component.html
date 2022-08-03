@@ -4,7 +4,7 @@
   <form [formGroup]="formMessage" class="card p-4 mb-3">
     <h3 class="text-center parent">Form Send Message</h3>
     <div class="mb-3">
-      <label class="form-label">Name</label>
+      <label class="form-label text-custom">Name</label>
       <input [class.is-invalid]="formMessage.controls['name'].invalid && formMessage.controls['name'].touched"
              class="form-control"
              formControlName="name"
@@ -16,7 +16,7 @@
       </div>
     </div>
     <div class="mb-3">
-      <label class="form-label">Message</label>
+      <label class="form-label text-custom">Message</label>
       <textarea [class.is-invalid]="formMessage.controls['message'].invalid && formMessage.controls['message'].touched"
                 class="form-control"
                 formControlName="message"
@@ -24,12 +24,15 @@
                 rows="3"
                 type="text"></textarea>
       <div *ngIf="formMessage.controls['message'].hasError('required')"
-           class="invalid-feedback">Message is required</div>
+           class="invalid-feedback">Message is required
+      </div>
     </div>
     <button (click)="sendMessage()"
             class="btn btn-light mt-3 p-2"
             type="button">Send
     </button>
   </form>
-  <app-child></app-child>
+  <app-child
+    (messageToParent)="acceptMessage($event)"
+    [messageFromParent]="messageToChild"></app-child>
 </div>

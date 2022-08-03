@@ -4,7 +4,7 @@
   <form [formGroup]="formDataDiri" class="card p-4 mb-3">
     <h3 class="text-center validation">Formulir Data Diri</h3>
     <div class="mb-3">
-      <label class="form-label">Nama Lengkap</label>
+      <label class="form-label text-custom">Nama Lengkap</label>
       <input [class.is-invalid]="formDataDiri.controls['nama'].invalid && formDataDiri.controls['nama'].touched"
              class="form-control" formControlName="nama"
              placeholder="Masukan nama lengkap anda"
@@ -15,7 +15,7 @@
            class="invalid-feedback">Nama harus minimal 10 kata</div>
     </div>
     <div class="mb-3">
-      <label class="form-label">Umur</label>
+      <label class="form-label text-custom">Umur</label>
       <input [class.is-invalid]="formDataDiri.controls['umur'].invalid && formDataDiri.controls['umur'].touched"
              class="form-control"
              formControlName="umur"
@@ -31,7 +31,7 @@
       </div>
     </div>
     <div class="mb-3">
-      <label class="form-label">Nomer Telpon</label>
+      <label class="form-label text-custom">Nomer Telpon</label>
       <input [class.is-invalid]="formDataDiri.controls['noTelp'].invalid && formDataDiri.controls['noTelp'].touched"
              class="form-control"
              formControlName="noTelp"
@@ -45,7 +45,7 @@
       </div>
     </div>
     <div class="mb-3">
-      <label class="form-label">Email</label>
+      <label class="form-label text-custom">Email</label>
       <input [class.is-invalid]="formDataDiri.controls['email'].invalid && formDataDiri.controls['email'].touched"
              class="form-control"
              formControlName="email"
@@ -57,7 +57,7 @@
            class="invalid-feedback">Email yang dimasukkan harus benar</div>
     </div>
     <div class="mb-3">
-      <label class="form-label">Alamat</label>
+      <label class="form-label text-custom">Alamat</label>
       <textarea [class.is-invalid]="formDataDiri.controls['alamat'].invalid && formDataDiri.controls['alamat'].touched"
                 class="form-control"
                 formControlName="alamat"
