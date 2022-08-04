@@ -5,6 +5,7 @@ import {CountComponent} from "./count/count.component";
 import {ValidationComponent} from "./validation/validation.component";
 import {ParentComponent} from "./communication/parent/parent.component";
 import {ProdusenModule} from "./produsen/produsen.module";
+import {ProdukModule} from "./produk/produk.module";
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'produsen',
     loadChildren: () => ProdusenModule
+  },
+  {
+    path: 'produk',
+    loadChildren: () => ProdukModule
   }
 ];
 

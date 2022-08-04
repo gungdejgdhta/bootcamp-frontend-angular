@@ -27,7 +27,6 @@ export class FormProdusenComponent implements OnInit {
   }
 
   save() {
-
     let produsen:ProdusenModel = this.formProdusen.value;
 
     this._produsenService.create(produsen).subscribe(value => {

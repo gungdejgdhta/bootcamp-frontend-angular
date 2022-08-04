@@ -1,0 +1,96 @@
+<div class="container mt-5">
+  <h3>My Produk</h3>
+  <hr class="border-primary">
+  <form [formGroup]="formProduk" class="card p-4 mb-3 mt-5">
+    <h3 class="text-center produk">Form Produk</h3>
+    <div class="mb-3">
+      <label class="form-label produk">Nama</label>
+      <input
+        [class.is-invalid]="formProduk.controls['nama'].invalid && formProduk.controls['nama'].touched"
+        formControlName = 'nama'
+        class="form-control"
+        placeholder="Masukkan nama produk..."
+        type="text">
+      <div
+        *ngIf="formProduk.controls['nama'].hasError('required')"
+        class="invalid-feedback">Nama is required
+      </div>
+      <div
+        *ngIf="formProduk.controls['nama'].hasError('minlength')"
+        class="invalid-feedback">Minimal name is 4 character
+      </div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label produk">Jenis</label>
+      <input
+        [class.is-invalid]="formProduk.controls['jenis'].invalid && formProduk.controls['jenis'].touched"
+        formControlName = 'jenis'
+        class="form-control"
+        placeholder="Masukkan jenis produk..."
+        type="text">
+      <div
+        *ngIf="formProduk.controls['jenis'].hasError('required')"
+        class="invalid-feedback">Jenis is required
+      </div>
+      <!--<select
+        [class.is-invalid]="formProduk.controls['select'].invalid && formProduk.controls['select'].touched"
+        class="form-select">
+        <option selected>Pilih jenis produk...</option>
+        <option value="1">Makanan</option>
+        <option value="2">Minuman</option>
+      </select>-->
+    </div>
+    <div class="mb-3">
+      <label class="form-label produk">Berat</label>
+      <input
+        [class.is-invalid]="formProduk.controls['berat'].invalid && formProduk.controls['berat'].touched"
+        formControlName = 'berat'
+        class="form-control"
+        placeholder="Masukkan berat produk..."
+        type="text">
+      <div
+        *ngIf="formProduk.controls['berat'].hasError('required')"
+        class="invalid-feedback">Berat is required
+      </div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label produk">Harga</label>
+      <input
+        [class.is-invalid]="formProduk.controls['harga'].invalid && formProduk.controls['harga'].touched"
+        formControlName = 'harga'
+        class="form-control"
+        placeholder="Masukkan harga produk..."
+        type="number">
+      <div
+        *ngIf="formProduk.controls['harga'].hasError('required')"
+        class="invalid-feedback">Harga is required
+      </div>
+      <div
+        *ngIf="formProduk.controls['harga'].hasError('min')"
+        class="invalid-feedback">Minimal harga is 1000 Rupiah
+      </div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label produk">Id Produsen</label>
+      <input
+        [class.is-invalid]="formProduk.controls['produsen_id'].invalid && formProduk.controls['produsen_id'].touched"
+        formControlName = 'produsen_id'
+        class="form-control"
+        placeholder="Masukkan id produsen dari produk..."
+        type="number">
+      <div
+        *ngIf="formProduk.controls['produsen_id'].hasError('required')"
+        class="invalid-feedback">Id Produsen is required
+      </div>
+      <div
+        *ngIf="formProduk.controls['produsen_id'].hasError('minlength')"
+        class="invalid-feedback">Minimal id produsen is 1 character
+      </div>
+    </div>
+    <button
+      (click)="save()"
+      [disabled]="formProduk.invalid"
+      class="btn btn-light mt-3">Simpan
+    </button>
+  </form>
+</div>
