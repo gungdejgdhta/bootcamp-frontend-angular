@@ -1,31 +1,31 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-custom">
   <div class="container-fluid">
     <a class="navbar-brand profile-1" href="#">Bootcamp</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
+            data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active profile-1" aria-current="page" href="#">Home</a>
+          <a aria-current="page" class="nav-link active profile-1" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link profile-1" [routerLink]="['/', 'profile']">Profile</a>
+          <a [routerLink]="['/', 'profile']" class="nav-link profile-1">Profile</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link profile-1" [routerLink]="['/', 'count']">Count</a>
+          <a [routerLink]="['/', 'count']" class="nav-link profile-1">Count</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link profile-1" [routerLink]="['/', 'validation']">Validation</a>
+          <a [routerLink]="['/', 'validation']" class="nav-link profile-1">Validation</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link profile-1" [routerLink]="['/', 'communication']">Communication</a>
+          <a [routerLink]="['/', 'communication']" class="nav-link profile-1">Communication</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/', 'produsen']" class="nav-link profile-1">Produsen</a>
         </li>
       </ul>
-      <form class="d-flex profile-1" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-light" type="submit">Search</button>
-      </form>
     </div>
   </div>
 </nav>

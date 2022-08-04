@@ -1,0 +1,55 @@
+<div class="container mt-5">
+  <h3 class="produsen">My Produsen</h3>
+  <hr class="border-primary">
+  <form [formGroup]="formProdusen" class="card p-4 mb-3">
+    <h3 class="text-center produsen">List Produsen</h3>
+    <div class="mb-3">
+      <label class="form-label produsen">Nama</label>
+      <input
+        [class.is-invalid]="formProdusen.controls['nama'].invalid && formProdusen.controls['nama'].touched"
+        class="form-control"
+        formControlName='nama'
+        placeholder="Masukkan nama anda"
+        type="text">
+      <div *ngIf="formProdusen.controls['nama'].hasError('required')"
+           class="invalid-feedback">Nama is required
+      </div>
+      <div *ngIf="formProdusen.controls['nama'].hasError('minlength')"
+           class="invalid-feedback">Minimal name is 5 character
+      </div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label produsen">Kode</label>
+      <input
+        [class.is-invalid]="formProdusen.controls['kode'].invalid && formProdusen.controls['kode'].touched"
+        class="form-control"
+        formControlName='kode'
+        placeholder="Masukkan kode anda"
+        type="text">
+      <div *ngIf="formProdusen.controls['kode'].hasError('required')"
+           class="invalid-feedback">Kode is required
+      </div>
+      <div *ngIf="formProdusen.controls['kode'].hasError('minlength')"
+           class="invalid-feedback">Minimal kode is 2 character
+      </div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label produsen">Alamat</label>
+      <textarea
+        [class.is-invalid]="formProdusen.controls['alamat'].invalid && formProdusen.controls['alamat'].touched"
+        class="form-control"
+        formControlName='alamat'
+        placeholder="Masukkan Alamat anda"
+        rows="3"
+        type="text"></textarea>
+      <div *ngIf="formProdusen.controls['alamat'].hasError('required')"
+           class="invalid-feedback">Alamat is required
+      </div>
+    </div>
+    <button
+      (click)="save()"
+      [disabled]="formProdusen.invalid"
+      class="btn btn-light">Simpan
+    </button>
+  </form>
+</div>

@@ -1,0 +1,32 @@
+<div class="container mt-5">
+  <h3 class="count produsen">My Produsen</h3>
+  <hr class="border-primary">
+  <div class="card p-4 mt-5">
+    <h3 class="text-center produsen">List Produsen</h3>
+    <button
+      [routerLink]="['/', 'produsen', 'form']"
+      style="width: 100px"
+      class="btn btn-md btn-light">Tambah
+    </button>
+    <table class="table table-bordered mt-3">
+      <thead class="table-custom">
+      <tr class="text-center">
+        <th scope="col">#</th>
+        <th scope="col">Nama</th>
+        <th scope="col">Kode</th>
+        <th scope="col">Alamat</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let produsen of listProdusen; let i = index"
+          class="text-center">
+        <th class="body-custom" scope="row">{{i + 1}}</th>
+        <td class="body-custom">{{produsen.nama}}</td>
+        <td class="body-custom">{{produsen.kode}}</td>
+        <td class="body-custom">{{produsen.alamat}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+

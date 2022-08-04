@@ -4,6 +4,7 @@ import {ProfileComponent} from "./profile/profile.component";
 import {CountComponent} from "./count/count.component";
 import {ValidationComponent} from "./validation/validation.component";
 import {ParentComponent} from "./communication/parent/parent.component";
+import {ProdusenModule} from "./produsen/produsen.module";
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'communication',
     component: ParentComponent
+  },
+  {
+    path: 'produsen',
+    loadChildren: () => ProdusenModule
   }
 ];
 
