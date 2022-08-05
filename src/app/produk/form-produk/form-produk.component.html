@@ -2,7 +2,7 @@
   <h3 class="produk">My Produk</h3>
   <hr class="border-primary">
   <form [formGroup]="formProduk" class="card p-4 mb-3 mt-5">
-    <h3 class="text-center produk">Form Produk</h3>
+    <h3 class="text-center produk">Form {{jenisMenu}} Produk</h3>
     <div class="mb-3">
       <label class="form-label produk">Nama</label>
       <input
@@ -32,12 +32,14 @@
         *ngIf="formProduk.controls['jenis'].hasError('required')"
         class="invalid-feedback">Jenis is required
       </div>
+      <div
+        *ngIf="formProduk.controls['jenis'].hasError('minlength')"
+        class="invalid-feedback">Minimal character jenis is 7 character
+      </div>
       <!--<select
         [class.is-invalid]="formProduk.controls['jenis'].invalid && formProduk.controls['jenis'].touched"
         class="form-select">
-        <option selected>Pilih jenis produk...</option>
-        <option value="1">Makanan</option>
-        <option value="2">Minuman</option>
+        <option *ngFor="let produsen of listProdusen">{{produsen.nama}}</option>
       </select>-->
     </div>
     <div class="mb-3">
@@ -72,25 +74,22 @@
     </div>
     <div class="mb-3">
       <label class="form-label produk">Id Produsen</label>
-      <input
+      <select
         [class.is-invalid]="formProduk.controls['produsen_id'].invalid && formProduk.controls['produsen_id'].touched"
-        class="form-control"
-        formControlName='produsen_id'
-        placeholder="Masukkan id produsen dari produk..."
-        type="number">
+        formControlName = 'produsen_id'
+        class="form-select">
+        <option selected>Pilih nama produsen dibawah...</option>
+        <option *ngFor="let produsen of listProdusen">{{produsen.id}}</option>
+      </select>
       <div
         *ngIf="formProduk.controls['produsen_id'].hasError('required')"
-        class="invalid-feedback">Id Produsen is required
-      </div>
-      <div
-        *ngIf="formProduk.controls['produsen_id'].hasError('minlength')"
-        class="invalid-feedback">Minimal id produsen is 1 character
+        class="invalid-feedback">Id produsen is required
       </div>
     </div>
     <button
       (click)="save()"
       [disabled]="formProduk.invalid"
-      class="btn btn-light mt-3"
+      class="btn btn-light"
       style="width: 100px">Simpan
     </button>
   </form>

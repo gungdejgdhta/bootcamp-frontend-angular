@@ -10,6 +10,4 @@ export class ProdukModel {
 export class Produsen {
   id!: number;
   nama!: string;
-  kode!: string;
-  alamat!: string;
 }

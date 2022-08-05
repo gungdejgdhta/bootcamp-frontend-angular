@@ -6,6 +6,7 @@ import {ValidationComponent} from "./validation/validation.component";
 import {ParentComponent} from "./communication/parent/parent.component";
 import {ProdusenModule} from "./produsen/produsen.module";
 import {ProdukModule} from "./produk/produk.module";
+import {TransaksiModule} from "./transaksi/transaksi.module";
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'produk',
     loadChildren: () => ProdukModule
+  },
+  {
+    path: 'transaksi',
+    loadChildren: () => TransaksiModule
   }
 ];
 

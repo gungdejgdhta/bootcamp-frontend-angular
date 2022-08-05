@@ -13,7 +13,7 @@ export class FormProdusenComponent implements OnInit {
 
   formProdusen!: FormGroup;
   idProdusen!: number;
-  jenisMenu: string = 'Tambah';
+  jenisMenu: string = 'Create';
 
   //fungsi activated route digunakan untuk mendeteksi id yang akan diupdate
   constructor(private formBuild: FormBuilder,
@@ -38,7 +38,7 @@ export class FormProdusenComponent implements OnInit {
         this.formProdusen.controls['nama'].setValue(value.nama);
         this.formProdusen.controls['kode'].setValue(value.kode);
         this.formProdusen.controls['alamat'].setValue(value.alamat);
-      })
+      });
       this.jenisMenu = 'Update';
     }
   }
@@ -53,7 +53,7 @@ export class FormProdusenComponent implements OnInit {
           console.log(value.body)
           this.router.navigate(['/', 'produsen'])
         } else {
-          alert("Gagal Menyunting Data")
+          alert("Gagal Update Data")
           console.log(value.body)
         }
       })
@@ -63,7 +63,7 @@ export class FormProdusenComponent implements OnInit {
           console.log(value.body);
           this.router.navigate(['/', 'produsen']);
         } else {
-          alert("Gagal Menyimpan Data");
+          alert("Gagal Update Data");
           console.log(value.body);
         }
       })

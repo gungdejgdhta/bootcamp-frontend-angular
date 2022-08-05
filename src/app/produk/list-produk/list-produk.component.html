@@ -4,7 +4,7 @@
   <div class="card p-4 mt-5">
     <h3 class="text-center produk">List Produk</h3>
     <button
-      [routerLink]="['/', 'produk', 'form']"
+      [routerLink]="['/', 'produk', 'create']"
       class="btn btn-light"
       style="width: 100px">Tambah
     </button>
@@ -16,7 +16,8 @@
         <th scope="col">Jenis</th>
         <th scope="col">Berat</th>
         <th scope="col">Harga</th>
-        <th scope="col">Id Produsen</th>
+        <th scope="col">Produsen</th>
+        <th scope="col">Aksi</th>
       </tr>
       </thead>
       <tbody>
@@ -27,7 +28,19 @@
         <td class="body-custom">{{produk.jenis}}</td>
         <td class="body-custom">{{produk.berat}}</td>
         <td class="body-custom">Rp{{produk.harga}}</td>
-        <td class="body-custom">{{produk.produsen.id}}</td>
+        <td class="body-custom">{{produk.produsen.nama}}</td>
+        <td>
+          <button
+            [routerLink]="['/', 'produk', 'update', produk.id]"
+            class="btn btn-sm btn-outline-success me-3"
+            style="font-family: 'MADE TOMMY'">Update
+          </button>
+          <button
+            (click)="delete(produk.id)"
+            class="btn btn-sm btn-outline-danger"
+            style="font-family: 'MADE TOMMY'">Delete
+          </button>
+        </td>
       </tr>
       </tbody>
     </table>

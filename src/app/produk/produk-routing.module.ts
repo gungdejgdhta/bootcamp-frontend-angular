@@ -9,7 +9,11 @@ const routes: Routes = [
     component: ListProdukComponent
   },
   {
-    path: 'form',
+    path: 'create',
+    component: FormProdukComponent
+  },
+  {
+    path: 'update/:id',
     component: FormProdukComponent
   }
 ];
