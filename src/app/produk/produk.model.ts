@@ -4,5 +4,12 @@ export class ProdukModel {
   jenis!: string;
   berat!: string;
   harga!: number;
-  produsen_id!: number;
+  produsen!: Produsen;
+}
+
+export class Produsen {
+  id!: number;
+  nama!: string;
+  kode!: string;
+  alamat!: string;
 }

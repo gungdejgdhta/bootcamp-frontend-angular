@@ -33,4 +33,16 @@ export class ListProdusenComponent implements OnInit {
         }
       })
   }
+
+  delete(id: number) {
+    this._produsenService.delete(id).subscribe(value => {
+      if (value.status === 200) {
+        console.log(value.body)
+        this.getListProdusen()
+      } else {
+        alert("Gagal Hapus Data")
+        console.log(value.body)
+      }
+    })
+  }
 }

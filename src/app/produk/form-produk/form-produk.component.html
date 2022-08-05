@@ -1,5 +1,5 @@
 <div class="container mt-5">
-  <h3>My Produk</h3>
+  <h3 class="produk">My Produk</h3>
   <hr class="border-primary">
   <form [formGroup]="formProduk" class="card p-4 mb-3 mt-5">
     <h3 class="text-center produk">Form Produk</h3>
@@ -7,8 +7,8 @@
       <label class="form-label produk">Nama</label>
       <input
         [class.is-invalid]="formProduk.controls['nama'].invalid && formProduk.controls['nama'].touched"
-        formControlName = 'nama'
         class="form-control"
+        formControlName='nama'
         placeholder="Masukkan nama produk..."
         type="text">
       <div
@@ -24,8 +24,8 @@
       <label class="form-label produk">Jenis</label>
       <input
         [class.is-invalid]="formProduk.controls['jenis'].invalid && formProduk.controls['jenis'].touched"
-        formControlName = 'jenis'
         class="form-control"
+        formControlName='jenis'
         placeholder="Masukkan jenis produk..."
         type="text">
       <div
@@ -33,7 +33,7 @@
         class="invalid-feedback">Jenis is required
       </div>
       <!--<select
-        [class.is-invalid]="formProduk.controls['select'].invalid && formProduk.controls['select'].touched"
+        [class.is-invalid]="formProduk.controls['jenis'].invalid && formProduk.controls['jenis'].touched"
         class="form-select">
         <option selected>Pilih jenis produk...</option>
         <option value="1">Makanan</option>
@@ -44,8 +44,8 @@
       <label class="form-label produk">Berat</label>
       <input
         [class.is-invalid]="formProduk.controls['berat'].invalid && formProduk.controls['berat'].touched"
-        formControlName = 'berat'
         class="form-control"
+        formControlName='berat'
         placeholder="Masukkan berat produk..."
         type="text">
       <div
@@ -57,8 +57,8 @@
       <label class="form-label produk">Harga</label>
       <input
         [class.is-invalid]="formProduk.controls['harga'].invalid && formProduk.controls['harga'].touched"
-        formControlName = 'harga'
         class="form-control"
+        formControlName='harga'
         placeholder="Masukkan harga produk..."
         type="number">
       <div
@@ -74,8 +74,8 @@
       <label class="form-label produk">Id Produsen</label>
       <input
         [class.is-invalid]="formProduk.controls['produsen_id'].invalid && formProduk.controls['produsen_id'].touched"
-        formControlName = 'produsen_id'
         class="form-control"
+        formControlName='produsen_id'
         placeholder="Masukkan id produsen dari produk..."
         type="number">
       <div
@@ -90,7 +90,8 @@
     <button
       (click)="save()"
       [disabled]="formProduk.invalid"
-      class="btn btn-light mt-3">Simpan
+      class="btn btn-light mt-3"
+      style="width: 100px">Simpan
     </button>
   </form>
 </div>
