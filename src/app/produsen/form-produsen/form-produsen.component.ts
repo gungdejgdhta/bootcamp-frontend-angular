@@ -63,7 +63,7 @@ export class FormProdusenComponent implements OnInit {
           console.log(value.body);
           this.router.navigate(['/', 'produsen']);
         } else {
-          alert("Gagal Update Data");
+          alert("Gagal Create Data");
           console.log(value.body);
         }
       })

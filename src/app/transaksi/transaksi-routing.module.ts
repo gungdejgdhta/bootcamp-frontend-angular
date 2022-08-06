@@ -11,6 +11,10 @@ const routes: Routes = [
   {
     path: 'create',
     component: FormTransaksiComponent
+  },
+  {
+    path: 'update/:id',
+    component: FormTransaksiComponent
   }
 ];
 

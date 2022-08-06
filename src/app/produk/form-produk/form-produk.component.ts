@@ -46,7 +46,7 @@ export class FormProdukComponent implements OnInit {
         this.formProduk.controls['jenis'].setValue(value.jenis);
         this.formProduk.controls['berat'].setValue(value.berat);
         this.formProduk.controls['harga'].setValue(value.harga);
-        this.formProduk.controls['produsen_id'].setValue(value.produsen);
+        this.formProduk.controls['produsen_id'].setValue(value.produsen.id);
       });
       this.jenisMenu = 'Update';
     }
@@ -65,17 +65,17 @@ export class FormProdukComponent implements OnInit {
           console.log(value.body);
           alert("Gagal Update Data")
         }
-      });
+      })
     } else {
       this._produkService.create(produk).subscribe(value => {
         if (value.status === 200) {
           console.log(value.body);
           this.router.navigate(['/', 'produk']);
         } else {
-          alert("Gagal Menyimpan Data");
+          alert("Gagal Create Data");
           console.log(value.body);
         }
-      });
+      })
     }
   }
 

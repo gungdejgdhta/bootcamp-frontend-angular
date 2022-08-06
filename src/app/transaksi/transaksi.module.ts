@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { TransaksiRoutingModule } from './transaksi-routing.module';
 import { ListTransaksiComponent } from './list-transaksi/list-transaksi.component';
 import { FormTransaksiComponent } from './form-transaksi/form-transaksi.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { FormTransaksiComponent } from './form-transaksi/form-transaksi.componen
   ],
   imports: [
     CommonModule,
-    TransaksiRoutingModule
+    TransaksiRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class TransaksiModule { }

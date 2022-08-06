@@ -1,1 +1,48 @@
-<p>list-transaksi works!</p>
+<div class="container mt-5">
+  <h3 class="transaksi">My Transaksi</h3>
+  <hr class="border-primary">
+  <div class="card p-4 mt-5">
+    <h3 class="text-center transaksi">List Transaksi</h3>
+    <button
+      [routerLink]="['/', 'transaksi', 'create']"
+      class="btn btn-light"
+      style="width: 100px">Tambah
+    </button>
+    <table class="table table-bordered mt-3">
+      <thead class="table-custom">
+      <tr class="text-center">
+        <th scope="row">#</th>
+        <th scope="row">Nama Produk</th>
+        <th scope="row">Harga</th>
+        <th scope="row">Kuantitas</th>
+        <th scope="row">Total Harga</th>
+        <th scope="row">Aksi</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let transaksi of listTransaksi; let i = index"
+          class="text-center">
+        <th class="body-custom" scope="col">{{i + 1}}</th>
+        <td class="body-custom">{{transaksi.produk.nama}}</td>
+        <td class="body-custom">Rp{{transaksi.produk.harga}},00</td>
+        <td class="body-custom">{{transaksi.kuantitas}}</td>
+        <td class="body-custom">Rp{{transaksi.produk.harga * transaksi.kuantitas}},00</td>
+        <td class="text-center">
+          <button
+            [routerLink]="['/', 'transaksi', 'update', transaksi.id]"
+            class="btn btn-sm btn-outline-success me-3"
+            style="font-family: 'MADE TOMMY'">
+            Update
+          </button>
+          <button
+            (click)="delete(transaksi.id)"
+            class="btn btn-sm btn-outline-danger"
+            style="font-family: 'MADE TOMMY'">
+            Delete
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

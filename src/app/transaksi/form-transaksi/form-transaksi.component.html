@@ -1,1 +1,58 @@
-<p>form-transaksi works!</p>
+<div class="container mt-5">
+  <h3 class="transaksi">My Transaksi</h3>
+  <hr class="border-primary">
+  <form [formGroup]="formTransaksi" class="card p-4 mt-5 mb-3">
+    <h3 class="text-center transaksi">Form {{jenisMenu}} Transaksi</h3>
+    <div class="mb-3">
+      <label class="form-label transaksi">Nama Produk</label>
+      <select
+        [class.is-invalid]="formTransaksi.controls['produk_nama'].invalid && formTransaksi.controls['produk_nama'].touched"
+        class="form-select"
+        formControlName='produk_nama'>
+        <option selected>Pilih nama produk dibawah...</option>
+        <option *ngFor="let produk of listProduk">{{produk.nama}}</option>
+      </select>
+      <div
+        *ngIf="formTransaksi.controls['produk_nama'].hasError('required')"
+        class="invalid-feedback">Nama produk is required
+      </div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label transaksi">Id Produk</label>
+      <select
+        [class.is-invalid]="formTransaksi.controls['produk_id'].invalid && formTransaksi.controls['produk_id'].touched"
+        class="form-select"
+        formControlName='produk_id'>
+        <option selected>Pilih produk id yang sesuai...</option>
+        <option *ngFor="let produk of listProduk">{{produk.id}}</option>
+      </select>
+      <div
+        *ngIf="formTransaksi.controls['produk_id'].hasError('required')"
+        class="invalid-feedback">Id produk is required
+      </div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label transaksi">Kuantitas</label>
+      <input
+        [class.is-invalid]="formTransaksi.controls['kuantitas'].invalid && formTransaksi.controls['kuantitas'].touched"
+        class="form-control"
+        formControlName='kuantitas'
+        placeholder="Masukkan kuantitas produk..."
+        type="number">
+      <div
+        *ngIf="formTransaksi.controls['kuantitas'].hasError('required')"
+        class="invalid-feedback">Kuantitas is required
+      </div>
+      <div
+        *ngIf="formTransaksi.controls['kuantitas'].hasError('min')"
+        class="invalid-feedback">Minimal kuantitas value is 10
+      </div>
+    </div>
+    <button
+      (click)="save()"
+      [disabled]="formTransaksi.invalid"
+      class="btn btn-light"
+      style="width: 100px">Simpan
+    </button>
+  </form>
+</div>

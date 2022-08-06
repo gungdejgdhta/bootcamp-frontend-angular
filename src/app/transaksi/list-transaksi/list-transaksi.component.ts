@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {TransaksiModel} from "../transaksi.model";
+import {TransaksiService} from "../transaksi.service";
 
 @Component({
   selector: 'app-list-transaksi',
@@ -7,9 +9,39 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListTransaksiComponent implements OnInit {
 
-  constructor() { }
+  listTransaksi!: TransaksiModel[];
 
-  ngOnInit(): void {
+  constructor(private _transaksiService: TransaksiService) {
   }
 
+  ngOnInit(): void {
+    this.getTransaksiList()
+  }
+
+  getTransaksiList() {
+    this._transaksiService.list().subscribe({
+      next: value => {
+        console.log(value)
+        this.listTransaksi = value
+      },
+      error: err => {
+        console.log(err)
+      },
+      complete: () => {
+        console.log("Service Telah Dijalankan")
+      }
+    })
+  }
+
+  delete(id: number) {
+    this._transaksiService.delete(id).subscribe(value => {
+      if (value.status === 200) {
+        console.log(value.body)
+        this.getTransaksiList()
+      } else {
+        console.log(value.body)
+        alert("Gagal Hapus Data")
+      }
+    })
+  }
 }
